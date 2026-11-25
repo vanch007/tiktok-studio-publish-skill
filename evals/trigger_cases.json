@@ -1,0 +1,26 @@
+{
+  "recommended_threshold": 0.33,
+  "negative_patterns": [
+    "only explain",
+    "analytics only",
+    "delete posts",
+    "generate video",
+    "edit the video",
+    "不要删除作品",
+    "只做数据分析",
+    "生成视频"
+  ],
+  "should_trigger": [
+    {"text": "Upload these prepared MP4s to my confirmed TikTok Studio account and schedule them with different low-volume platform songs.", "family": "upload_schedule"},
+    {"text": "把这些短视频上传到我确认的 TikTok Studio，设置越南语说明、话题，并轮换背景音乐后定时发布。", "family": "cn_upload_schedule"},
+    {"text": "Verify each scheduled TikTok post row and record the music track and volume used.", "family": "audit_posts"},
+    {"text": "Use the TikTok Studio workflow to schedule the next batch, but keep the original audio unchanged.", "family": "audio_preserving_schedule"}
+  ],
+  "should_not_trigger": [
+    {"text": "Analyze the views and watch time of my TikTok posts only.", "family": "analytics_only"},
+    {"text": "Generate the teaching videos and make the subtitles more attractive.", "family": "media_generation"},
+    {"text": "Delete the old TikTok videos and clean up the account.", "family": "delete_posts"},
+    {"text": "Explain how TikTok scheduling works; do not upload anything.", "family": "explain_only"},
+    {"text": "用同一首音乐做完整批次，但不要发布。", "family": "plan_only_music_conflict"}
+  ]
+}

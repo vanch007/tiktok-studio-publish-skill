@@ -1,0 +1,27 @@
+interface:
+  display_name: "TikTok Studio Video Publisher"
+  short_description: "Upload, rotate low-volume music, schedule, and audit TikTok Studio videos"
+  default_prompt: "Use $tiktok-studio-publish to upload and schedule prepared MP4 videos in my confirmed TikTok Studio session, rotate platform music at low volume without covering the original audio, and verify every post row."
+compatibility:
+  canonical_format: "agent-skills"
+  adapter_targets:
+    - "openai"
+    - "claude"
+    - "generic"
+    - "vscode"
+  activation:
+    mode: "manual"
+    paths: []
+  execution:
+    context: "inline"
+    shell: "bash"
+  trust:
+    source_tier: "local"
+    remote_inline_execution: "forbid"
+    remote_metadata_policy: "allow-metadata-only"
+    external_publish_requires_user_authorization: true
+  degradation:
+    openai: "metadata-adapter"
+    claude: "neutral-source-plus-adapter"
+    generic: "neutral-source"
+    vscode: "agent-skills-source-with-vscode-notes"

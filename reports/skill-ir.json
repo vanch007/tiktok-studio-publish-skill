@@ -1,0 +1,117 @@
+{
+  "schema_version": "2.0.0",
+  "name": "tiktok-studio-publish",
+  "title": "TikTok Studio Video Publisher",
+  "job_to_be_done": "Upload and schedule prepared vertical educational videos to a confirmed TikTok Studio account.",
+  "trigger_surface": {
+    "description": "Use when the user asks to upload or schedule prepared MP4 videos in a user-confirmed TikTok Studio account, set Vietnamese captions and hashtags, add or rotate TikTok platform music at low volume while preserving original audio, or audit post rows. Do not trigger for video generation/editing, analytics-only work, deleting posts, or an unconfirmed browser/account.",
+    "should_trigger": [
+      "Upload these prepared MP4s to my confirmed TikTok Studio account and schedule them with different low-volume platform songs.",
+      "把这些短视频上传到我确认的 TikTok Studio，设置越南语说明、话题，并轮换背景音乐后定时发布。",
+      "Verify each scheduled TikTok post row and record the music track and volume used.",
+      "Use the TikTok Studio workflow to schedule the next batch, but keep the original audio unchanged."
+    ],
+    "should_not_trigger": [
+      "Analyze the views and watch time of my TikTok posts only.",
+      "Generate the teaching videos and make the subtitles more attractive.",
+      "Delete the old TikTok videos and clean up the account.",
+      "Explain how TikTok scheduling works; do not upload anything.",
+      "用同一首音乐做完整批次，但不要发布。",
+      "Do not edit videos, generate media, choose an unconfirmed browser/account, or delete existing posts."
+    ],
+    "edge_cases": []
+  },
+  "workflow": {
+    "steps": [
+      "Understand the request.",
+      "Execute the main task.",
+      "Validate the result."
+    ],
+    "decision_points": [
+      "Ask one focused clarification when the real job, output, or exclusion boundary is unclear.",
+      "Escalate visible tradeoffs when benchmark patterns conflict with local privacy, naming, or governance constraints.",
+      "Do not silently broaden the skill into adjacent jobs just because the examples are nearby."
+    ],
+    "failure_modes": [
+      "Tables can render as dense grids with weak hierarchy or poor mobile readability.",
+      "Long bullets can make the output look complete while hiding the actual decision logic.",
+      "Footnote markers or dense citation notes can interrupt the reading flow.",
+      "Evidence can be over-attached to obvious statements and under-attached to risky claims.",
+      "Commands can omit environment assumptions, working directory, or rollback notes.",
+      "Code snippets can look runnable while missing required inputs.",
+      "Users start invoking the skill for adjacent one-off or explanation-only requests.",
+      "Outputs remain valid but become generic, cluttered, or weakly aligned with the user's domain.",
+      "Borrowed benchmark patterns no longer fit the local job or add ceremony without payoff.",
+      "Skill usage becomes team-critical while ownership, review cadence, or rollback evidence stays informal."
+    ]
+  },
+  "resources": {
+    "references": [
+      "references/caption-and-audit-schema.md",
+      "references/music-rotation-policy.md",
+      "references/publishing-checklist.md"
+    ],
+    "scripts": [
+      "scripts/plan_schedule.py"
+    ],
+    "assets": [],
+    "reports": [
+      "reports/intent-context.json",
+      "reports/intent-confidence.json",
+      "reports/intent-confidence.md",
+      "reports/reference-synthesis.json",
+      "reports/reference-synthesis.md",
+      "reports/output-risk-profile.json",
+      "reports/output-risk-profile.md",
+      "reports/artifact-design-profile.json",
+      "reports/artifact-design-profile.md",
+      "reports/prompt-quality-profile.json",
+      "reports/prompt-quality-profile.md",
+      "reports/system-model.json",
+      "reports/system-model.md",
+      "reports/iteration-directions.json",
+      "reports/iteration-directions.md",
+      "reports/skill-overview.json",
+      "reports/skill-overview.html",
+      "reports/review_annotations.json",
+      "reports/review_annotations.md",
+      "reports/security_trust_report.json",
+      "reports/security_trust_report.md"
+    ]
+  },
+  "eval_plan": {
+    "trigger": [
+      "evals/semantic_config.json",
+      "evals/trigger_cases.json"
+    ],
+    "output": [],
+    "adversarial": [],
+    "baseline": "without_skill"
+  },
+  "risk": {
+    "output_risk": "medium",
+    "execution_risk": "medium",
+    "trust_boundary": "team"
+  },
+  "governance": {
+    "owner": "Vanch",
+    "maturity": "production",
+    "review_cadence": "monthly",
+    "review_due": ""
+  },
+  "targets": [
+    "openai",
+    "claude",
+    "generic",
+    "agent-skills-compatible",
+    "vscode"
+  ],
+  "source_files": [
+    "SKILL.md",
+    "manifest.json",
+    "agents/interface.yaml",
+    "reports/intent-context.json",
+    "reports/output-risk-profile.json",
+    "reports/system-model.json"
+  ]
+}

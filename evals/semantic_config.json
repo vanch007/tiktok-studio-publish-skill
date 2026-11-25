@@ -1,0 +1,39 @@
+{
+  "fallback_positive_concepts": ["upload_schedule", "caption_music", "audit_posts"],
+  "positive_concepts": {
+    "upload_schedule": {
+      "weight": 0.40,
+      "phrases": ["upload", "schedule", "TikTok Studio", "上传", "定时发布", "排程"]
+    },
+    "caption_music": {
+      "weight": 0.25,
+      "phrases": ["caption", "hashtags", "platform music", "背景音乐", "说明", "话题"]
+    },
+    "audit_posts": {
+      "weight": 0.35,
+      "phrases": ["audit", "verify", "post row", "作品行", "核对", "验证"]
+    }
+  },
+  "negative_concepts": {
+    "analytics_only": {
+      "weight": 0.70,
+      "exclusive": true,
+      "phrases": ["analytics only", "views and watch time", "只做数据分析"]
+    },
+    "media_generation": {
+      "weight": 0.55,
+      "exclusive": true,
+      "phrases": ["generate video", "edit the video", "生成视频", "剪辑视频"]
+    },
+    "delete_posts": {
+      "weight": 0.70,
+      "exclusive": true,
+      "phrases": ["delete posts", "delete the old TikTok videos", "删除作品"]
+    },
+    "explain_only": {
+      "weight": 0.60,
+      "exclusive": true,
+      "phrases": ["explain how", "do not upload", "只要解释", "不要上传"]
+    }
+  }
+}

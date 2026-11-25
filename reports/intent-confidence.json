@@ -1,0 +1,35 @@
+{
+  "score": 100,
+  "band": "high",
+  "gate_passed": true,
+  "strengths": [
+    "The recurring job is concrete enough to anchor the package.",
+    "Real input shape is explicit.",
+    "The hand-back output is concrete.",
+    "Boundary exclusions are already explicit.",
+    "Operational constraints are visible."
+  ],
+  "gaps": [],
+  "follow_up_questions": [],
+  "anchor_sentence": "Upload and schedule prepared vertical educational videos to a confirmed TikTok Studio account. Primary output: Scheduled TikTok posts plus an auditable local publish log with filename, track, volume, caption, and schedule.. Exclusions: Do not edit videos, generate media, choose an unconfirmed browser/account, or delete existing posts..",
+  "recommended_action": "Intent is clear enough to package the first routeable version.",
+  "context": {
+    "job": "Upload and schedule prepared vertical educational videos to a confirmed TikTok Studio account.",
+    "real_inputs": [
+      "Local MP4 files, an explicit posting order, caption/topic text, schedule slots, and optional music rotation."
+    ],
+    "primary_output": "Scheduled TikTok posts plus an auditable local publish log with filename, track, volume, caption, and schedule.",
+    "description": "Upload and schedule short educational videos in the user-confirmed TikTok Studio session, with verified captions, rotated low-volume platform music, and a publish audit; do not edit media or delete posts.",
+    "exclusions": [
+      "Do not edit videos, generate media, choose an unconfirmed browser/account, or delete existing posts."
+    ],
+    "constraints": [
+      "Preserve original audio; add platform music at about -40 dB; rotate tracks; verify the post row after submission."
+    ],
+    "standards": [
+      "Never claim success without a visible post-row or schedule confirmation."
+    ],
+    "correction": "Stop on wrong window, missing account, loud music, caption persistence failure, or ambiguous schedule state and report the exact checkpoint.",
+    "user_references": []
+  }
+}

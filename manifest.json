@@ -1,0 +1,34 @@
+{
+  "name": "tiktok-studio-publish",
+  "version": "0.2.0",
+  "owner": "Vanch",
+  "updated_at": "2026-08-06",
+  "status": "active",
+  "maturity_tier": "production",
+  "lifecycle_stage": "production",
+  "context_budget_tier": "production",
+  "review_cadence": "monthly",
+  "skill_archetype": "production",
+  "target_platforms": [
+    "openai",
+    "claude",
+    "generic",
+    "agent-skills-compatible",
+    "vscode"
+  ],
+  "factory_components": [
+    "references",
+    "scripts",
+    "evals",
+    "reports"
+  ],
+  "optional_integrations": [
+    {
+      "name": "tiktok-agent-publisher",
+      "mode": "api-inbox-preupload",
+      "trust_boundary": "metadata-only discovery; explicit OAuth and live-publish authorization required"
+    }
+  ],
+  "trust_level": "external-publish-with-user-authorization",
+  "rollback_boundary": "No deletion or account-setting changes; stop and retain the audit record when verification fails."
+}
